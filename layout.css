@@ -1,0 +1,21 @@
+/*
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+  /*erste Schriftart = Standart, dann Zweite Wahl usw.
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+* {
+  font-size: 12px;
+  margin: 0px;
+  padding: 0px;
+}
+
+*/
+
+div#map {
+  width: 1024px;
+  height: 800px;
+}
