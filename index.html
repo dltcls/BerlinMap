@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://ww.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+
+<head>
+  <meta http-equiv="content-type" content="text/html" charset="UTF-8" />
+  <!-- <link rel="stylesheet" href="css/layout.css" type="text/css" media="screen"/> -->
+  <title>Berlin Wahlkreise</title>
+
+  <!-- Laden der Module -->
+
+  <!-- Mapbox -->
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.css' rel='stylesheet' />
+  <!-- D3 -->
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://d3js.org/d3-csv.v1.min.js"></script>
+
+  <!-- Leaflet.css -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="" />
+
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+
+  <!-- CSS (kann selbstverstanedlich spaeter ausgelagert werden) -->
+  <style>
+    #map {
+      width: 1024px;
+      height: 800px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="map"></div>
+  <!-- Laden der eigenen Skripte -->
+  <script src="BerlinWKG.js"></script>
+  <!-- Da sind die Wahlgrenzen drin. -->
+  <script src="BerlinKarte.js"></script>
+</body>
+
+</html>
