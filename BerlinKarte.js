@@ -18,43 +18,106 @@ L.tileLayer('http://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=' 
 
 // Farbe der jeweiligen Parteien, fuer spaetere Funktion
 function getPartyColor(party) {
-    return 
-        party == 'CDU' ? '#000' :
-        party == 'SDP' ? '#d71f1d' :
+    switch(party) {
+        case 'CDU':
+            return '#000'; 
+            break;
+        case 'SPD':
+            return '#d71f1d'; 
+            break;
+        case 'DIE LINKE':
+            return '#bd3075'; 
+            break;
+        case 'GRÜNE':
+            return '#78bc1b'; 
+            break;
+        case 'AfD':
+            return '#4176c2'; 
+            break;
+        case 'FDP':
+            return '#ffcc00'; 
+            break;
+        default: 
+            return '#707173';
+            break;
+
+    }
+       /*  party == 'CDU' ? '#000' :
+        party == 'SPD' ? '#d71f1d' :
         party == 'DIE LINKE' ? '#bd3075' :
         party == 'GRÜNE' ? '#78bc1b' :
         party == 'AfD' ? '#4176c2' :
         party == 'FDP' ?  '#ffcc00' :
-        '#707173'; // Sonstige
+        '#707173'; // Sonstige */
 }
 
 /* pars(e)t je Wahlkreis die Erststimmen2013.CSV-Datei nach dem hoechsten
 Prozentsatz */
 function getWinner(wahlkreis) { // wahlkreis ist eine Zahl wie 75 fuer Mitte
-    var erststimme2013 = d3.csv("erststimme2013.csv", function (d) {
-      return {
-          wahlkreisnummer: +d.Wahlkreisnummer,
-          bundestagswahlkreis: d.Bundeswahlkreis,
-          cdu: +d.CDU,
-          spd: +d.SPD,
-          linke: +d.Linke,
-          gruene: +d.GRÜNE,
-          afd: +d.AfD,
-          fdp: +d.FDP,
-          sonstige: +d.Sonstige
-      };
-    }, function (error, rows) {
-        alert(rows);
-    });
 
-    console.log(erststimme2013)
+    switch(wahlkreis) {
+        case 75:
+            return getPartyColor('SPD');
+            break;
+        case 76:
+            return getPartyColor('DIE LINKE');
+            break;
+        case 77:
+            return getPartyColor('CDU');
+            break;
+        case 78:
+            return getPartyColor('CDU');
+            break;
+        case 79:
+            return getPartyColor('CDU');
+            break;
+        case 80:
+            return getPartyColor('CDU');
+            break;
+        case 81:
+            return getPartyColor('CDU');
+            break;
+        case 82:
+            return getPartyColor('SPD');
+            break;
+        case 83:
+            return getPartyColor('GRÜNE');
+            break;
+        case 84:
+            return getPartyColor('DIE LINKE');
+            break;  
+        case 85:
+            return getPartyColor('DIE LINKE');
+            break;
+        case 86:
+            return getPartyColor('DIE LINKE');
+            break;
+
+        default:
+            return getPartyColor('');
+            break;
+    }
+    /* return
+        wahlkreis == 75 ? getPartyColor('SPD') :
+        wahlkreis == 76 ? getPartyColor('DIE LINKE') :
+        wahlkreis == 77 ? getPartyColor('CDU') :
+        wahlkreis == 78 ? getPartyColor('CDU') :
+        wahlkreis == 79 ? getPartyColor('CDU') :
+        wahlkreis == 80 ? getPartyColor('CDU') :
+        wahlkreis == 81 ? getPartyColor('CDU') :
+        wahlkreis == 82 ? getPartyColor('SPD') :
+        wahlkreis == 83 ? getPartyColor('GRÜNE') :
+        wahlkreis == 84 ? getPartyColor('DIE LINKE') :
+        wahlkreis == 85 ? getPartyColor('DIE LINKE') :
+        wahlkreis == 86 ? getPartyColor('DIE LINKE') :
+        getPartyColor(''); */
 
 }
 
 // Gestaltung des Layers, der die Wahlbezirksgrenzen aufzeigt
 function style(feature) {
     return {
-        fillColor: '#dd3497',
+        fillColor: getWinner(feature.properties.WKR_NR),
         weight: 2, // Dicke der Grenzen
         opacity: 1, // Transparenz der weissen Grenzen
         color: 'white', // Linien der Grenzen sind weiss
@@ -62,6 +125,7 @@ function style(feature) {
         fillOpacity: 0.7 // Transparenz der eingefaerbten Staaten (1 ist blickdicht)
     };
 }
+
 
 // Hinzufuegen der Wahlbezirksgrenzen und der Gestaltung
 L.geoJson(wkData, {style: style}).addTo(map);
