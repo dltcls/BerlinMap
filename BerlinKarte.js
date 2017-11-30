@@ -126,8 +126,44 @@ function style(feature) {
     };
 }
 
+function highlightFeature(e) {
+    wahlergebnisse.update(e.target.feature.properties);
+}
+
+function resetHighlight(e) {
+    wahlergebnisse.update(e.target.feature.properties);
+}
+
+function onEachFeature(feature, layer) {
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight,
+        //click: zoomToFeature
+    });
+}
+
+
 
 // Hinzufuegen der Wahlbezirksgrenzen und der Gestaltung
-L.geoJson(wkData, {style: style}).addTo(map);
+L.geoJson(wkData, {style: style, onEachFeature: onEachFeature}).addTo(map);
+
+var wahlergebnisse = L.control();
+wahlergebnisse.onAdd = function (map) {
+    this._div = L.DomUtil.create('div', 'wahlergebnis'); // Div mit Klasse "wahlergebnis" wird erstellt
+
+    return this._div;
+}
+
+wahlergebnisse.update = function (props) {
+    try {
+        console.log(props.WKR_NR);
+        this._div.innerHTML = props.WKR_NAME + '<img src =\'Mitte.png\' height=\'300\'>';
+    } catch(err) {
+        console.log(err);
+    }
+    
+}
+
+wahlergebnisse.addTo(map);
 
 
