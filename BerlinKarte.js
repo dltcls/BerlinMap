@@ -151,7 +151,6 @@ L.geoJson(wkData, {style: style, onEachFeature: onEachFeature}).addTo(map);
 var wahlergebnisse = L.control();
 wahlergebnisse.onAdd = function (map) {
     this._div = L.DomUtil.create('div', 'wahlergebnis'); // Div mit Klasse "wahlergebnis" wird erstellt
-
     return this._div;
 }
 
@@ -163,7 +162,7 @@ wahlergebnisse.update = function (props) {
         //var elem = this._div.innerHTML;
         //elem = props.WKR_NR;
         //$(elem).append("<img src='" + wkrnr + ".png'");
-       this._div.innerHTML = props.WKR_NAME + '<img src =\'Balkendiagramme/' + wkrnr + '.png\'>';
+       this._div.innerHTML ='<img src =\'Balkendiagramme/' + wkrnr + '.png\'>';
     } catch(err) {
         console.log(err);
     }
