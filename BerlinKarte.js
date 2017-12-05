@@ -144,7 +144,6 @@ function onEachFeature(feature, layer) {
 }
 
 
-
 // Hinzufuegen der Wahlbezirksgrenzen und der Gestaltung
 L.geoJson(wkData, {style: style, onEachFeature: onEachFeature}).addTo(map);
 
