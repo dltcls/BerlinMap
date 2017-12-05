@@ -1,3 +1,4 @@
+//$(document).ready(function(){
 
 // Erstellen einer Karte mithilfe von Mapbpx, Koordinaten sind die Mitte von Berlin
 var map = L.map('map').setView([52.520504, 13.350000], 11); // 11 ist der Zoomfaktor
@@ -157,7 +158,12 @@ wahlergebnisse.onAdd = function (map) {
 wahlergebnisse.update = function (props) {
     try {
         console.log(props.WKR_NR);
-        this._div.innerHTML = props.WKR_NAME + '<img src =\'Mitte.png\' height=\'300\'>';
+        var wkrnr = props.WKR_NR;
+        //var src = $(this).val();
+        //var elem = this._div.innerHTML;
+        //elem = props.WKR_NR;
+        //$(elem).append("<img src='" + wkrnr + ".png'");
+       this._div.innerHTML = props.WKR_NAME + '<img src =\'Balkendiagramme/' + wkrnr + '.png\'>';
     } catch(err) {
         console.log(err);
     }
@@ -165,5 +171,5 @@ wahlergebnisse.update = function (props) {
 }
 
 wahlergebnisse.addTo(map);
-
+//});
 
