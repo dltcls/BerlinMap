@@ -19,3 +19,12 @@ div#map {
   width: 1400px;
   height: 800px;
 }
+
+.leaflet-interactive:hover {
+   /*stroke-width: 6;
+   stroke: blue;
+   fill: #00b2ee
+   fill: #00b2ee;*/
+   fill-opacity: 1;
+
+}
