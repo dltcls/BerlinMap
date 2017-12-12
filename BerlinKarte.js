@@ -15,6 +15,14 @@ L.tileLayer('http://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=' 
     'Imagery © <a href="http://mapbox.com">Mapbox</a>'
 }).addTo(map);
 
+d3.queue()
+  .defer(d3.csv, "erststimme2013.csv")
+  .await(function(error, file1) {
+      if (error) throw error;
+      console.log(file1);
+    });
+
+
 // Farbe der jeweiligen Parteien, fuer spaetere Funktion
 function getPartyColor(party) {
     switch(party) {
@@ -49,6 +57,8 @@ function getPartyColor(party) {
         party == 'FDP' ?  '#ffcc00' :
         '#707173'; // Sonstige */
 }
+
+
 
 
 
