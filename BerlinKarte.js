@@ -90,7 +90,7 @@ function getWinner(wahlkreis) { // wahlkreis ist eine Zahl wie 75 fuer Mitte
             return getPartyColor('CDU');
             break;
         case 78:
-            return getPartyColor('CDU');
+            return getPartyColor('SPD');
             break;
         case 79:
             return getPartyColor('CDU');
@@ -184,7 +184,7 @@ wahlergebnisse.update = function (props) {
         //var elem = this._div.innerHTML;
         //elem = props.WKR_NR;
         //$(elem).append("<img src='" + wkrnr + ".png'");
-       this._div.innerHTML ='<img src =\'R_Balkendiagramme/' + wkrnr + '.png\' height=\'350\'>';
+       this._div.innerHTML ='<img src =\'Python_Balkendiagramme/' + wkrnr + '.png\' height=\'350\'>';
     } catch(err) {
         console.log(err);
     }
