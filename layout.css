@@ -26,8 +26,8 @@ div#map {
    stroke: blue;
    fill-opacity: 1;
    fill: #00b2ee;*/
-
-   fill: #00b2ee;
+   fill-opacity: 1;
+  
 
 
 }

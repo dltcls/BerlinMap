@@ -15,12 +15,12 @@ L.tileLayer('http://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=' 
     'Imagery © <a href="http://mapbox.com">Mapbox</a>'
 }).addTo(map);
 
-d3.queue()
+/* d3.queue()
   .defer(d3.csv, "erststimme2013.csv")
   .await(function(error, file1) {
       if (error) throw error;
       console.log(file1);
-    });
+    }); */
 
 
 // Farbe der jeweiligen Parteien, fuer spaetere Funktion
@@ -184,7 +184,7 @@ wahlergebnisse.update = function (props) {
         //var elem = this._div.innerHTML;
         //elem = props.WKR_NR;
         //$(elem).append("<img src='" + wkrnr + ".png'");
-       this._div.innerHTML ='<img src =\'Balkendiagramme/' + wkrnr + '.png\'>';
+       this._div.innerHTML ='<img src =\'R_Balkendiagramme/' + wkrnr + '.png\' height=\'350\'>';
     } catch(err) {
         console.log(err);
     }
