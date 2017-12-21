@@ -15,30 +15,36 @@ L.tileLayer('http://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=' 
     'Imagery © <a href="http://mapbox.com">Mapbox</a>'
 }).addTo(map);
 
+/* d3.queue()
+  .defer(d3.csv, "erststimme2013.csv")
+  .await(function(error, file1) {
+      if (error) throw error;
+      console.log(file1);
+    }); */
 
 
 // Farbe der jeweiligen Parteien, fuer spaetere Funktion
 function getPartyColor(party) {
     switch(party) {
         case 'CDU':
-            return '#000'; 
+            return '#000';
             break;
         case 'SPD':
-            return '#d71f1d'; 
+            return '#d71f1d';
             break;
         case 'DIE LINKE':
-            return '#bd3075'; 
+            return '#bd3075';
             break;
         case 'GRÜNE':
-            return '#78bc1b'; 
+            return '#78bc1b';
             break;
         case 'AfD':
-            return '#4176c2'; 
+            return '#4176c2';
             break;
         case 'FDP':
-            return '#ffcc00'; 
+            return '#ffcc00';
             break;
-        default: 
+        default:
             return '#707173';
             break;
 
@@ -51,6 +57,23 @@ function getPartyColor(party) {
         party == 'FDP' ?  '#ffcc00' :
         '#707173'; // Sonstige */
 }
+
+
+
+
+
+/*
+Papa.parse('https://www.dropbox.com/s/gl065gmgbkk1lbb/erststimme2013.csv?dl=0', {
+   download: true,
+    // rest of config ...
+})
+
+complete: function(results, erststimme2013.csv) {
+	console.log("Parsing complete:", results, erststimme2013.csv);
+}
+*/
+
+
 
 /* pars(e)t je Wahlkreis die Erststimmen2013.CSV-Datei nach dem hoechsten
 Prozentsatz */
@@ -67,7 +90,7 @@ function getWinner(wahlkreis) { // wahlkreis ist eine Zahl wie 75 fuer Mitte
             return getPartyColor('CDU');
             break;
         case 78:
-            return getPartyColor('CDU');
+            return getPartyColor('SPD');
             break;
         case 79:
             return getPartyColor('CDU');
@@ -86,7 +109,7 @@ function getWinner(wahlkreis) { // wahlkreis ist eine Zahl wie 75 fuer Mitte
             break;
         case 84:
             return getPartyColor('DIE LINKE');
-            break;  
+            break;
         case 85:
             return getPartyColor('DIE LINKE');
             break;
@@ -161,13 +184,12 @@ wahlergebnisse.update = function (props) {
         //var elem = this._div.innerHTML;
         //elem = props.WKR_NR;
         //$(elem).append("<img src='" + wkrnr + ".png'");
-       this._div.innerHTML ='<img src =\'Balkendiagramme/' + wkrnr + '.png\'>';
+       this._div.innerHTML ='<img src =\'Python_Balkendiagramme/' + wkrnr + '.png\' height=\'350\'>';
     } catch(err) {
         console.log(err);
     }
-    
+
 }
 
 wahlergebnisse.addTo(map);
 //});
-

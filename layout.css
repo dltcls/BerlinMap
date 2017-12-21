@@ -22,9 +22,12 @@ div#map {
 
 .leaflet-interactive:hover {
    /*stroke-width: 6;
+   stroke-width: 6;
    stroke: blue;
-   fill: #00b2ee
+   fill-opacity: 1;
    fill: #00b2ee;*/
    fill-opacity: 1;
+  
+
 
 }
