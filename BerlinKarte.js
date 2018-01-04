@@ -1,7 +1,7 @@
 //$(document).ready(function(){
 
 // Erstellen einer Karte mithilfe von Mapbpx, Koordinaten sind die Mitte von Berlin
-var map = L.map('map').setView([52.520504, 13.350000], 11); // 11 ist der Zoomfaktor
+var map = L.map('map').setView([52.520504, 13.5000], 11); // 11 ist der Zoomfaktor
 
 // AccesToken fuer Mapbox-Karte
 var accesToken = 'pk.eyJ1IjoidHJuZyIsImEiOiJjajloZGh3aDgzN3JpMnFyd3R5cnh3bnJ2In0.NCncO8OwCFLCxsrVctdlSA';
