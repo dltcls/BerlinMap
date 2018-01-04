@@ -5,24 +5,30 @@
 
 <head>
   <meta http-equiv="content-type" content="text/html" charset="UTF-8" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css" />
+
+  <!-- Import Google Icon Font -->
+  <link rel="stylesheet" href='https://fonts.googleapis.com/icon?family=Material+Icons' type='text/css' />
+  <!-- customemade stylesheet -->
   <link rel="stylesheet" href="layout.css" type="text/css" media="screen" />
+
+
   <title>Berlin Wahlkreise</title>
+
 
   <!-- Laden der Module -->
 
   <!-- Mapbox -->
   <link href='https://api.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.css' rel='stylesheet' />
-
   <!-- Leaflet.css -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="" />
-
   <!-- Make sure you put this AFTER Leaflet's CSS -->
   <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
 
 
   <!--csv im browser benutzen-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.3.6/papaparse.min.js"></script>
-
 
   <!--d3 eingebunden -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.12.0/d3.min.js"></script>
@@ -33,11 +39,38 @@
 </head>
 
 <body>
+
+  <!-- Dropdown Structure -->
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">s0558239</a></li>
+  </ul>
+
+  <nav>
+    <div id="header" class="nav-wrapper">
+      <a href="#" class="brand-logo">BerlinMap</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a "s0558239">Jonas Zwink</a></li>
+        <li><a href="s0559842">Diletta Calussi</a></li>
+        <li><a href="s0558589">Trang Hoang</a></li>
+        <li><a href="s0542957">Ina Schnauss</a></li>
+        <!-- Dropdown Trigger -->
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Test<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="tooltip">Hover over me
+    <span class="tooltiptext">Tooltip text</span>
+  </div>
+
   <div id="map"></div>
   <!-- Laden der eigenen Skripte -->
   <script src="BerlinWKG.js"></script>
   <!-- Da sind die Wahlgrenzen drin. -->
   <script src="BerlinKarte.js"></script>
+
+
+
 </body>
 
 </html>

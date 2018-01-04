@@ -184,7 +184,7 @@ wahlergebnisse.update = function (props) {
         //var elem = this._div.innerHTML;
         //elem = props.WKR_NR;
         //$(elem).append("<img src='" + wkrnr + ".png'");
-       this._div.innerHTML ='<img src =\'Python_Balkendiagramme/' + wkrnr + '.png\' height=\'350\'>';
+       this._div.innerHTML ='<img src =\'Balkendiagramme/' + wkrnr + '.png\' height=\'350\'>';
     } catch(err) {
         console.log(err);
     }
